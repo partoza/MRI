@@ -5,6 +5,7 @@ import TechnologySection from './components/TechnologySection';
 import PlatformSection from './components/PlatformSection';
 import GallerySection from './components/GallerySection';
 import StatsSection from './components/StatsSection';
+import StorySection from './components/StorySection';
 import Footer from './components/Footer';
 
 export default function Home() {
@@ -33,6 +34,7 @@ export default function Home() {
         <PlatformSection />
         <GallerySection />
         <StatsSection />
+        <StorySection />
         <Footer />
       </main>
     </SmoothScroll>
