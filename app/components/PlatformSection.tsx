@@ -20,13 +20,19 @@ export default function PlatformSection() {
   }, []);
 
   // Image 3D Parallax (Flies in from the Left)
-  const imageX = useTransform(scrollYProgress, [0, 0.35, 0.65, 1], [isMobile ? '-30vw' : '-60vw', '0vw', '0vw', isMobile ? '-15vw' : '-30vw']);
+  const imageXDesktop = useTransform(scrollYProgress, [0, 0.35, 0.65, 1], ['-60vw', '0vw', '0vw', '-30vw']);
+  const imageXMobile = useTransform(scrollYProgress, [0, 0.35, 0.65, 1], ['-30vw', '0vw', '0vw', '-15vw']);
+  const imageX = isMobile ? imageXMobile : imageXDesktop;
+
   const imageRotateY = useTransform(scrollYProgress, [0, 0.35, 0.65, 1], ['50deg', '0deg', '0deg', '25deg']);
   const imageZ = useTransform(scrollYProgress, [0, 0.35, 0.65, 1], ['-500px', '0px', '0px', '-300px']);
   const opacity = useTransform(scrollYProgress, [0.05, 0.35, 0.65, 0.95], [0, 1, 1, 0]);
 
   // Text 3D Parallax (Flies in from the Right)
-  const textX = useTransform(scrollYProgress, [0, 0.35, 0.65, 1], [isMobile ? '30vw' : '60vw', '0vw', '0vw', isMobile ? '15vw' : '30vw']);
+  const textXDesktop = useTransform(scrollYProgress, [0, 0.35, 0.65, 1], ['60vw', '0vw', '0vw', '30vw']);
+  const textXMobile = useTransform(scrollYProgress, [0, 0.35, 0.65, 1], ['30vw', '0vw', '0vw', '15vw']);
+  const textX = isMobile ? textXMobile : textXDesktop;
+
   const textRotateY = useTransform(scrollYProgress, [0, 0.35, 0.65, 1], ['-50deg', '0deg', '0deg', '-25deg']);
   const textZ = useTransform(scrollYProgress, [0, 0.35, 0.65, 1], ['-500px', '0px', '0px', '-300px']);
 
