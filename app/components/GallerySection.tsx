@@ -101,17 +101,17 @@ const MobileParallaxCard = ({ col, i, isMobile }: { col: any, i: number, isMobil
       {col.type === 'image-stack' && (
         <>
           <div className="hover-animated-border gallery-card-inner" style={{ flex: 1, borderRadius: '1.5rem', overflow: 'hidden', position: 'relative', boxShadow: '0 10px 30px rgba(0,0,0,0.3)', minHeight: '15vh' }}>
-            <img src={col.image1} className="img-fill" style={{ objectFit: 'cover' }} alt="MRI Team" loading="lazy" />
+            <img src={col.image1} className="img-fill" style={{ objectFit: 'cover' }} alt="MRI Team" fetchPriority="high" loading="eager" />
           </div>
           <div className="hover-animated-border gallery-card-inner" style={{ flex: 1, borderRadius: '1.5rem', overflow: 'hidden', position: 'relative', boxShadow: '0 10px 30px rgba(0,0,0,0.3)', minHeight: '15vh' }}>
-            <img src={col.image2} className="img-fill" style={{ objectFit: 'cover' }} alt="MRI Operations" loading="lazy" />
+            <img src={col.image2} className="img-fill" style={{ objectFit: 'cover' }} alt="MRI Operations" fetchPriority="high" loading="eager" />
           </div>
         </>
       )}
 
       {col.type === 'image-bottom-text' && (
         <div className="hover-animated-border gallery-card-inner" style={{ flex: 1, borderRadius: '1.5rem', overflow: 'hidden', position: 'relative', display: 'flex', alignItems: 'flex-end', padding: '1.5rem', boxShadow: '0 10px 30px rgba(0,0,0,0.3)' }}>
-          <img src={col.image} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: -1 }} alt="MRI Ecosystem" loading="lazy" />
+          <img src={col.image} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: -1 }} alt="MRI Ecosystem" fetchPriority="high" loading="eager" />
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(10,20,30,0.85) 0%, transparent 60%)', zIndex: 0 }} />
           
           {/* Separate Solid Gray Title Pill */}
@@ -182,7 +182,7 @@ export default function GallerySection() {
         position: 'relative',
         zIndex: 2,
         background: 'transparent',
-        marginBottom: '-40vh', // Inline margin (will be overridden to 0 on mobile by CSS)
+        marginBottom: '-55vh', // Inline margin (will be overridden to 0 on mobile by CSS)
       }}
     >
       <div

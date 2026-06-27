@@ -162,6 +162,8 @@ export default function TechnologySection() {
                     src={cloudImages[block.index as number]} 
                     alt="Gallery" 
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    fetchPriority="high" 
+                    loading="eager"
                   />
                   <div style={{
                     position: 'absolute',
@@ -217,6 +219,8 @@ export default function TechnologySection() {
                         src={cloudImages[imgIndex]} 
                         alt="Gallery" 
                         style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', inset: 0 }}
+                        fetchPriority="high" 
+                        loading="eager"
                       />
                     </div>
                   ))}
