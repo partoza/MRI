@@ -74,7 +74,7 @@ export default function Nav() {
 						display: "flex",
 						alignItems: "center",
 						justifyContent: "space-between",
-						height: 64,
+						height: 55,
 						padding: "0 24px",
 					}}
 				>
