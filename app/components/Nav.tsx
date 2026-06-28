@@ -1,6 +1,7 @@
 "use client";
 import { useState, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 const navLinks = [
 	{ label: "Home", href: "#hero" },
@@ -41,17 +42,21 @@ export default function Nav() {
 				left: "50%",
 				transform: "translateX(-50%)",
 				zIndex: 100,
+				width: "100%",
+				display: "flex",
+				justifyContent: "center",
 			}}
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}
 		>
 			<motion.div
 				animate={{
-					width: isHovered ? 380 : 320 /* Increased width */,
+					width: isHovered ? "min(95vw, 500px)" : "min(90vw, 400px)",
 					borderRadius: 24,
 				}}
 				transition={{ type: "spring", stiffness: 300, damping: 30 }}
 				style={{
+					minWidth: 300,
 					background: "var(--nav-bg)",
 					color: "var(--nav-text)",
 					overflow: "hidden",
@@ -69,20 +74,28 @@ export default function Nav() {
 						display: "flex",
 						alignItems: "center",
 						justifyContent: "space-between",
-						height: 52,
+						height: 64,
 						padding: "0 24px",
 					}}
 				>
-					<span
-						style={{
-							fontWeight: 800,
-							fontSize: 18,
-							fontFamily: "var(--font-poppins)",
-							cursor: "pointer",
-						}}
+					<div
+						onClick={() => handleClick("#hero")}
+						style={{ cursor: "pointer", display: "flex", alignItems: "center" }}
 					>
-						MRI
-					</span>
+						<Image
+							// Dynamically switch logos based on your existing theme state!
+							src={
+								theme === "dark"
+									? "/img/logo/mri-logo-dark.png"
+									: "/img/logo/mri-logo-light.png"
+							}
+							alt="MRI Logo"
+							width={120}
+							height={45}
+							style={{ objectFit: "contain", paddingBottom: 5 }}
+							priority // Add this so the logo loads immediately
+						/>
+					</div>
 					<div style={{ display: "flex", alignItems: "center", gap: 24 }}>
 						{/* Menu Trigger */}
 						<div

@@ -6,7 +6,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 const bentoColumns = [
 	{
 		type: "image-bottom-text",
-		image: "/img/gallery/8VX.jpg",
+		image: "/img/gallery/WH 3.jpg",
 		tag: "Our People",
 		text: "MRI is powered by passionate professionals and industry experts who bring both excellence and heart into everything we do.",
 	},
@@ -17,7 +17,7 @@ const bentoColumns = [
 	},
 	{
 		type: "image-bottom-text",
-		image: "/img/gallery/WH 3.jpg",
+		image: "/img/gallery/8VX.jpg",
 		tag: "Ecosystem",
 		text: "Backed by the ecosystem of 8VX Holdings and alongside sister companies McLane and Nutrafinity.",
 	},
